@@ -1,6 +1,6 @@
 {
     "name": "Hind's Birthday Card",
-    "short_name": "Bday Card",
+    "short_name": "Hind Bday card",
     "start_url": "./index.html",
     "display": "standalone",
     "orientation": "portrait",
