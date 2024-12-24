@@ -26,11 +26,11 @@ if (window.matchMedia("(display-mode: standalone)").matches) {
       <div id="inside">
         <h1>🎂 Blaas de 24 kaarsjes uit! 🎂</h1>
         <div id="candles"></div>
-        <p id="hint">Tip: Probeer te blazen naar je microfoon!</p>
+        <p id="hint">Tip: Probeer hard te blazen naar je microfoon hehe!</p>
       </div>
       <div id="popup" class="hidden">
-        <h2>Indien geluid niet werkt</h2>
-        <button id="click-to-extinguish">Klik om verder te gaan</button>
+        
+        <button id="click-to-extinguish">Ik kan niet blazen :( </button>
       </div>
     `;
   
