@@ -92,7 +92,7 @@ if (window.matchMedia("(display-mode: standalone)").matches) {
     const flame = document.querySelector(".flame");
     if (flame) {
       flame.style.opacity = "0"; // Verberg de vlam
-      flame.style.transition = "opacity 1s";
+      flame.style.transition = "opacity 0.75s";
       flame.classList.remove("flame");
     } else {
       showFinalMessage();
