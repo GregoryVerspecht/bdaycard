@@ -126,8 +126,9 @@ function showAndroidInstallPrompt() {
     document.getElementById("app").innerHTML = `
       <div id="front">
         <div class="card">
+          <h1>🌸 Voor de geweldige Hind 🌸</h1>
           <img src="assets/hind-photo.jpg" alt="Foto van Hind" id="hind-photo">
-          <button id="open-card-btn">Open de kaart</button>
+          <button id="open-card-btn">👉🏼 Open je kaart! 👈🏼</button>
         </div>
       </div>
     `;
