@@ -1,4 +1,4 @@
-const cacheName = "bday-card-v3.2"; // Verander de versie wanneer je iets wijzigt
+const cacheName = "bday-card-v3.3"; // Verander de versie wanneer je iets wijzigt
 const assets = [
   "/",
   "/index.html",
