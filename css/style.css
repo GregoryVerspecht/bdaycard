@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+    color: #333;
+    margin: 0;
+  }
+  #card {
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #fc3c3c;
+  }
+  
