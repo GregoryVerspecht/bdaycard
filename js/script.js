@@ -1,21 +1,18 @@
-/*document.getElementById("surprise-btn").addEventListener("click", () => {
-    const music = document.getElementById("birthday-music");
-    music.play();
-    alert("🎉 Surprise! Wishing you the best day ever, Hind!");
-  });
- */
-  if (window.matchMedia("(display-mode: standalone)").matches) {
+// Controleer of de app in standalone modus draait
+if (window.matchMedia("(display-mode: standalone)").matches) {
     console.log("Running in standalone mode");
   } else {
-    alert("Je kan deze ook op je startscherm toevoegen als webapp!!");
+    alert("Je kan deze ook op je startscherm toevoegen als webapp!");
   }
-
- // Functie om de voorkant van de kaart te laden
-function loadFront() {
+  
+  // Functie om de voorkant van de kaart te laden
+  function loadFront() {
     document.getElementById("app").innerHTML = `
       <div id="front">
-        <img src="assets/hind-photo.png" alt="Foto van Hind" id="hind-photo">
-        <button id="open-card-btn">Open de kaart</button>
+        <div class="card">
+          <img src="assets/hind-photo.png" alt="Foto van Hind" id="hind-photo">
+          <button id="open-card-btn">Open de kaart</button>
+        </div>
       </div>
     `;
   
@@ -32,7 +29,7 @@ function loadFront() {
         <p id="hint">Tip: Probeer te blazen naar je microfoon!</p>
       </div>
       <div id="popup" class="hidden">
-        <h2>Ja nee eh Hind... dat gaat zo niet 🤣</h2>
+        <h2>Indien geluid niet werkt</h2>
         <button id="click-to-extinguish">Klik om verder te gaan</button>
       </div>
     `;
@@ -61,7 +58,7 @@ function loadFront() {
   function enableBlowing() {
     let micTimeout;
   
-    navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+    navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
       const audioContext = new AudioContext();
       const analyser = audioContext.createAnalyser();
       const microphone = audioContext.createMediaStreamSource(stream);
@@ -77,8 +74,8 @@ function loadFront() {
         if (avgVolume > 50) {
           clearTimeout(micTimeout);
           micTimeout = setTimeout(() => {
-            showPopup();
-          }, 4000);
+            extinguishCandle();
+          }, 200);
         }
         requestAnimationFrame(detectBlow);
       }
@@ -89,20 +86,37 @@ function loadFront() {
   
     // Voeg click-handler toe voor als blazen niet werkt
     document.getElementById("click-to-extinguish").addEventListener("click", () => {
-      alert("Alle kaarsjes zijn uit! 🎉 Gefeliciteerd Hind!");
-      const music = document.getElementById("birthday-music");
-        music.play();
-      document.getElementById("popup").classList.add("hidden");
+      showFinalMessage();
     });
   }
   
-  // Functie om de popup te tonen
-  function showPopup() {
-    document.getElementById("popup").classList.remove("hidden");
-    document.getElementById("inside").classList.add("hidden");
+  // Functie om kaarsjes één voor één uit te blazen
+  function extinguishCandle() {
+    const flame = document.querySelector(".flame");
+    if (flame) {
+      flame.style.opacity = "0"; // Verberg de vlam
+      flame.style.transition = "opacity 0.5s";
+      flame.classList.remove("flame");
+    } else {
+      showFinalMessage();
+    }
   }
   
-  //Start
+  // Functie om de eindboodschap en het liedje te tonen
+  function showFinalMessage() {
+    document.getElementById("app").innerHTML = `
+      <div id="final">
+        <h1>Gefeliciteerd, Hind! 🎉</h1>
+        <p>Alle kaarsjes zijn uitgeblazen. Geniet van je dag!</p>
+        <audio id="birthday-music" controls autoplay>
+          <source src="assets/happy-birthday.mp3" type="audio/mpeg">
+          Jouw browser ondersteunt geen audio-element.
+        </audio>
+      </div>
+    `;
+  }
+  
+  // Start met de voorkant
   document.addEventListener("DOMContentLoaded", () => {
     loadFront();
   });
