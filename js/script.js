@@ -1,9 +1,9 @@
-document.getElementById("surprise-btn").addEventListener("click", () => {
+/*document.getElementById("surprise-btn").addEventListener("click", () => {
     const music = document.getElementById("birthday-music");
     music.play();
     alert("🎉 Surprise! Wishing you the best day ever, Hind!");
   });
- 
+ */
   if (window.matchMedia("(display-mode: standalone)").matches) {
     console.log("Running in standalone mode");
   } else {
@@ -14,7 +14,7 @@ document.getElementById("surprise-btn").addEventListener("click", () => {
 function loadFront() {
     document.getElementById("app").innerHTML = `
       <div id="front">
-        <img src="assets/hind-photo.jpg" alt="Foto van Hind" id="hind-photo">
+        <img src="assets/hind-photo.png" alt="Foto van Hind" id="hind-photo">
         <button id="open-card-btn">Open de kaart</button>
       </div>
     `;
@@ -90,6 +90,8 @@ function loadFront() {
     // Voeg click-handler toe voor als blazen niet werkt
     document.getElementById("click-to-extinguish").addEventListener("click", () => {
       alert("Alle kaarsjes zijn uit! 🎉 Gefeliciteerd Hind!");
+      const music = document.getElementById("birthday-music");
+        music.play();
       document.getElementById("popup").classList.add("hidden");
     });
   }
@@ -100,6 +102,8 @@ function loadFront() {
     document.getElementById("inside").classList.add("hidden");
   }
   
-  // Start de kaart met de voorkant
-  loadFront();
+  //Start
+  document.addEventListener("DOMContentLoaded", () => {
+    loadFront();
+  });
   
