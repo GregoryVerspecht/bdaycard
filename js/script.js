@@ -1,9 +1,125 @@
-// Controleer of de app in standalone modus draait
+let deferredPrompt; // Variabele om het installatieprompt op Android te beheren
+
+// Detecteer of de app niet in standalone modus draait
 if (window.matchMedia("(display-mode: standalone)").matches) {
-    console.log("Running in standalone mode");
-  } else {
-    alert("Je kan deze ook op je startscherm toevoegen als webapp!");
+  console.log("Running in standalone mode");
+} else {
+  // Detecteer platform
+  if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    // Toon iOS installatiemelding
+    showIOSInstallPrompt();
+  } else if (/Android/i.test(navigator.userAgent)) {
+    // Luister naar het beforeinstallprompt event voor Android
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault(); // Voorkom de automatische prompt
+      deferredPrompt = e; // Sla het event op voor later gebruik
+      showAndroidInstallPrompt(); // Toon Android melding
+    });
   }
+}
+
+// Functie om een iOS-installatie melding te tonen
+function showIOSInstallPrompt() {
+  const prompt = document.createElement("div");
+  prompt.id = "install-prompt";
+  prompt.style = `
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    z-index: 1000;
+  `;
+  prompt.innerHTML = `
+    <p style="margin: 0 0 10px;">📱 Voeg deze app toe aan je startscherm voor een betere ervaring!</p>
+    <ol style="text-align: left; padding: 0 20px; margin: 0; font-size: 14px;">
+      <li>Druk op het <strong>Deel-icoon</strong> <span style="font-size: 16px;">📤</span> onderaan of bovenaan Safari.</li>
+      <li>Kies <strong>'Zet op beginscherm'</strong>.</li>
+      <li>Geef de app een naam en druk op <strong>'Voeg toe'</strong>.</li>
+    </ol>
+    <button id="close-prompt-ios" style="
+      margin-top: 10px;
+      padding: 8px 15px;
+      background: #ff6b6b;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    ">Sluiten</button>
+  `;
+
+  document.body.appendChild(prompt);
+  document.getElementById("close-prompt-ios").addEventListener("click", () => {
+    document.body.removeChild(prompt);
+  });
+}
+
+// Functie om een Android-installatie melding te tonen
+function showAndroidInstallPrompt() {
+  const prompt = document.createElement("div");
+  prompt.id = "install-prompt";
+  prompt.style = `
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    z-index: 1000;
+  `;
+  prompt.innerHTML = `
+    <p style="margin: 0 0 10px;">📱 Voeg deze app toe aan je startscherm voor een betere ervaring!</p>
+    <button id="install-android" style="
+      padding: 8px 15px;
+      background: #ff6b6b;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    ">Toevoegen aan startscherm</button>
+    <button id="close-prompt-android" style="
+      margin-left: 10px;
+      padding: 8px 15px;
+      background: #ccc;
+      color: #333;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    ">Sluiten</button>
+  `;
+
+  document.body.appendChild(prompt);
+
+  document.getElementById("install-android").addEventListener("click", () => {
+    deferredPrompt.prompt(); // Toon de echte installatieprompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === "accepted") {
+        console.log("Gebruiker heeft app toegevoegd aan startscherm");
+      } else {
+        console.log("Gebruiker heeft installatie geweigerd");
+      }
+      deferredPrompt = null; // Reset het event
+    });
+    document.body.removeChild(prompt); // Verwijder de prompt
+  });
+
+  document.getElementById("close-prompt-android").addEventListener("click", () => {
+    document.body.removeChild(prompt); // Sluit de melding
+  });
+}
+
   
   // Functie om de voorkant van de kaart te laden
   function loadFront() {
@@ -117,7 +233,7 @@ function playMusic() {
     document.getElementById("app").innerHTML = `
       <div id="final">
         <h1>Gefeliciteerd, Hind! 🎉</h1>
-        <p>Alle kaarsjes zijn uitgeblazen. Geniet van je dag! - 80 + muziek 2135</p>
+        <p>Alle kaarsjes zijn uitgeblazen. Geniet van je dag!</p>
         <audio id="birthday-music" controls autoplay>
           <source src="assets/happy-birthday.mp3" type="audio/mpeg">
           Jouw browser ondersteunt geen audio-element.
