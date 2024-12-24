@@ -69,7 +69,7 @@ if (window.matchMedia("(display-mode: standalone)").matches) {
         analyser.getByteFrequencyData(dataArray);
         const avgVolume = dataArray.reduce((sum, value) => sum + value, 0) / dataArray.length;
   
-        if (avgVolume > 100) {
+        if (avgVolume > 80) {
           extinguishCandle(); // Blaas dynamisch kaarsjes uit
         }
   
@@ -105,7 +105,7 @@ if (window.matchMedia("(display-mode: standalone)").matches) {
     document.getElementById("app").innerHTML = `
       <div id="final">
         <h1>Gefeliciteerd, Hind! 🎉</h1>
-        <p>Alle kaarsjes zijn uitgeblazen. Geniet van je dag! - 100</p>
+        <p>Alle kaarsjes zijn uitgeblazen. Geniet van je dag! - 80</p>
         <audio id="birthday-music" controls autoplay>
           <source src="assets/happy-birthday.mp3" type="audio/mpeg">
           Jouw browser ondersteunt geen audio-element.
