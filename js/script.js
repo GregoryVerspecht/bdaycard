@@ -98,14 +98,26 @@ if (window.matchMedia("(display-mode: standalone)").matches) {
       showFinalMessage();
     }
   }
+
+  // Functie om het liedje af te spelen
+function playMusic() {
+    const music = document.getElementById("birthday-music");
+    music.play()
+      .then(() => {
+        console.log("Muziek speelt af!");
+      })
+      .catch((error) => {
+        console.error("Kan muziek niet afspelen:", error);
+      });
+  }
   
   // Functie om de eindboodschap en het liedje te tonen
   function showFinalMessage() {
-
+    playMusic(); // Speel muziek af
     document.getElementById("app").innerHTML = `
       <div id="final">
         <h1>Gefeliciteerd, Hind! 🎉</h1>
-        <p>Alle kaarsjes zijn uitgeblazen. Geniet van je dag! - 80</p>
+        <p>Alle kaarsjes zijn uitgeblazen. Geniet van je dag! - 80 + muziek</p>
         <audio id="birthday-music" controls autoplay>
           <source src="assets/happy-birthday.mp3" type="audio/mpeg">
           Jouw browser ondersteunt geen audio-element.
