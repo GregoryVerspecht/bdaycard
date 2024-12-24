@@ -69,7 +69,7 @@ if (window.matchMedia("(display-mode: standalone)").matches) {
         analyser.getByteFrequencyData(dataArray);
         const avgVolume = dataArray.reduce((sum, value) => sum + value, 0) / dataArray.length;
   
-        if (avgVolume > 50) {
+        if (avgVolume > 70) {
           extinguishCandle(); // Blaas dynamisch kaarsjes uit
         }
   
@@ -92,7 +92,7 @@ if (window.matchMedia("(display-mode: standalone)").matches) {
     const flame = document.querySelector(".flame");
     if (flame) {
       flame.style.opacity = "0"; // Verberg de vlam
-      flame.style.transition = "opacity 0.5s";
+      flame.style.transition = "opacity 1s";
       flame.classList.remove("flame");
     } else {
       showFinalMessage();
