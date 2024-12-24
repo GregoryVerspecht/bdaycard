@@ -1,75 +1,116 @@
-#nav-menu {
-    position: fixed;
-    bottom: 0; /* Zet het menu onderaan */
-    width: 100%;
-    background: #ff6b6b;
-    padding: 10px 0;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  #nav-menu ul {
-    display: flex;
-    justify-content: space-around;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  #nav-menu li {
-    flex: 1;
-    text-align: center;
-  }
-  
-  #nav-menu button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 10px;
-    transition: background 0.3s;
-  }
-  
-  #nav-menu button:hover {
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
-  
-/* --- */ 
+/* App-container */
+
+/* Body: Roze achtergrond en gecentreerde app-container */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #ff9a9e, #ff6b6b);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    background: linear-gradient(to bottom, #ff9a9e, #ff6b6b); /* Roze verloop */
+    display: flex; /* Flexbox voor centreren */
+    justify-content: center; /* Centreer horizontaal */
+    align-items: center; /* Centreer verticaal */
+    min-height: 100vh; /* Zorg dat het scherm volledig gevuld wordt */
     color: #333;
   }
-  
-  #app {
-    width: 90vw; /* 90% van de schermbreedte */
-    max-width: 500px; /* Limiteer breedte voor grotere schermen */
-    height: 90vh; /* 90% van de schermhoogte */
+/* App-container */
+#app {
+    display: flex;
+    flex-direction: column; /* Header, content, footer in kolom */
+    height: 90vh; /* Vul 90% van de schermhoogte */
     max-height: 800px; /* Limiteer hoogte voor grote schermen */
-    background: white;
-    padding: 20px;
+    width: 90vw; /* Vul 90% van de schermbreedte */
+    max-width: 500px; /* Limiteer breedte voor grotere schermen */
+    margin: 0 auto;
+    background: whitesmoke;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    animation: fade-in 1s;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Verdeel ruimte gelijkmatig */
-    align-items: center;
+    padding: 20px;
     box-sizing: border-box; /* Zorg dat padding wordt meegerekend */
   }
   
-  @keyframes fade-in {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
+  /* Header */
+  #header {
+    background: #ff6b6b;
+    color: white;
+    text-align: center;
+    width: 90%; /* Iets kleiner dan de kaartbreedte */
+    height: 80px; /* Vaste hoogte voor consistentie */
+    margin: 0 auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
+  /* Content */
+  #content {
+    background: #ff6b6b;
+    color: white;
+    text-align: center;
+    width: 90%; /* Iets kleiner dan de kaartbreedte */
+    flex: 1; /* Vul resterende ruimte na header en footer */
+    overflow-y: auto; /* Voeg scroll toe als de inhoud te groot is */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centreer de inhoud verticaal */
+    align-items: center; /* Centreer de inhoud horizontaal */
+  }
+  
+  /* Footer */
+  #footer {
+    background: #ff6b6b;
+    color: white;
+    text-align: center;
+    width: 90%; /* Iets kleiner dan de kaartbreedte */
+    height: 100px; /* Vaste hoogte voor consistentie */
+    margin: 0 auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #footer p {
+    margin: 5px 0; /* Ruimte boven en onder de tekst */
+  }
+  
+  #footer button {
+    background: white;
+    color: #ff6b6b;
+    border: 1px solid #ff6b6b;
+    border-radius: 5px;
+    
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  #footer button:hover {
+    background: #ff6b6b;
+    color: white;
+  }
+  
+  /* Content */
+
+  #content {
+    background: #ff6b6b;
+    color: white;
+    text-align: center;
+    width: 90%; /* Iets kleiner dan de kaartbreedte */
+    max-height: 100%; /* Beperk hoogte binnen de container */
+    flex: 1; /* Vul resterende ruimte */
+    margin: 0 auto;
+    
+    display: flex; /* Gebruik flexbox voor layout */
+    flex-direction: column; /* Zorg dat de inhoud verticaal gestapeld is */
+    justify-content: center; /* Centreer de inhoud verticaal */
+    align-items: center; /* Centreer de inhoud horizontaal */
+  }
+  
+  /* Knoppen */
   button {
     background: #ff6b6b;
     color: white;
@@ -85,14 +126,22 @@ body {
     background: #fc3c3c;
   }
   
+  /* Afbeelding */
   #hind-photo {
     max-width: 80%; /* Beperk breedte voor grotere schermen */
-    max-height: 60%; /* Beperk hoogte binnen de kaart */
+    max-height: 100%; /* Beperk hoogte binnen de container */
     object-fit: contain; /* Zorg dat de afbeelding niet uitrekt */
     border-radius: 10px;
-    margin-bottom: 20px;
+  }
+
+  #blow-gif {
+    max-width: 80%; /* Beperk breedte voor grotere schermen */
+    max-height: 20%; /* Beperk hoogte binnen de container */
+    object-fit: contain; /* Zorg dat de afbeelding niet uitrekt */
+    border-radius: 10px;
   }
   
+  /* Titels en tekst */
   h1 {
     font-size: 1.5rem; /* Maak de titel proportioneel kleiner */
     margin: 10px 0;
@@ -103,7 +152,7 @@ body {
     margin: 10px 0;
   }
   
-  
+  /* Kaarsen */
   #candles {
     display: flex;
     flex-wrap: wrap;
@@ -133,6 +182,7 @@ body {
     box-shadow: 0 0 15px rgba(255, 170, 51, 0.8); /* Gloeiende vlam */
   }
   
+  /* Kaart */
   .card {
     display: flex;
     flex-direction: column;
@@ -143,5 +193,11 @@ body {
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
+  }
+  
+  /* Fade-in animatie */
+  @keyframes fade-in {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
   }
   
