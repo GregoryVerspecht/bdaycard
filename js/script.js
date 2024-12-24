@@ -56,8 +56,6 @@ if (window.matchMedia("(display-mode: standalone)").matches) {
   
   // Functie om microfooninput te detecteren
   function enableBlowing() {
-    let micTimeout;
-  
     navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
       const audioContext = new AudioContext();
       const analyser = audioContext.createAnalyser();
@@ -72,23 +70,22 @@ if (window.matchMedia("(display-mode: standalone)").matches) {
         const avgVolume = dataArray.reduce((sum, value) => sum + value, 0) / dataArray.length;
   
         if (avgVolume > 50) {
-          clearTimeout(micTimeout);
-          micTimeout = setTimeout(() => {
-            extinguishCandle();
-          }, 200);
+          extinguishCandle(); // Blaas dynamisch kaarsjes uit
         }
-        requestAnimationFrame(detectBlow);
+  
+        requestAnimationFrame(detectBlow); // Blijf luisteren naar de microfoon
       }
       detectBlow();
     }).catch(() => {
       alert("Microfoon toegang geweigerd. Klik op de kaarsjes om ze uit te blazen.");
     });
   
-    // Voeg click-handler toe voor als blazen niet werkt
+    // Fallback: Voeg een knop toe om kaarsjes handmatig uit te blazen
     document.getElementById("click-to-extinguish").addEventListener("click", () => {
       showFinalMessage();
     });
   }
+  
   
   // Functie om kaarsjes één voor één uit te blazen
   function extinguishCandle() {

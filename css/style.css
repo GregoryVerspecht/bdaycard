@@ -1,25 +1,33 @@
-#front {
+/* Algemene stijl voor body */
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: #ffd6d6;
+    min-height: 100vh; /* Zorgt ervoor dat het scherm volledig gevuld wordt */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffd6d6; /* Achtergrondkleur */
+    color: #333;
   }
   
-  .card {
+  /* Stijl voor het centrale inhoudselement */
+  #app {
     text-align: center;
-    background: white;
+    max-width: 500px; /* Optioneel: Limiteer de breedte */
     padding: 20px;
+    background: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
   
-  #hind-photo {
+  /* Stijl voor afbeeldingen */
+  img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
   }
   
+  /* Stijl voor knoppen */
   button {
     margin-top: 20px;
     padding: 10px 20px;
@@ -35,6 +43,7 @@
     background: #fc3c3c;
   }
   
+  /* Specifieke stijl voor kaarsjes */
   #candles {
     display: flex;
     flex-wrap: wrap;
