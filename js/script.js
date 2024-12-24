@@ -113,11 +113,11 @@ function playMusic() {
   
   // Functie om de eindboodschap en het liedje te tonen
   function showFinalMessage() {
-    playMusic(); // Speel muziek af
+   // playMusic(); // Speel muziek af
     document.getElementById("app").innerHTML = `
       <div id="final">
         <h1>Gefeliciteerd, Hind! 🎉</h1>
-        <p>Alle kaarsjes zijn uitgeblazen. Geniet van je dag! - 80 + muziek</p>
+        <p>Alle kaarsjes zijn uitgeblazen. Geniet van je dag! - 80 + muziek 2135</p>
         <audio id="birthday-music" controls autoplay>
           <source src="assets/happy-birthday.mp3" type="audio/mpeg">
           Jouw browser ondersteunt geen audio-element.
