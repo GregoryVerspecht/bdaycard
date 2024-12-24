@@ -24,4 +24,13 @@ body {
   button:hover {
     background: #fc3c3c;
   }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #ff9a9e;
+  }
+  
   

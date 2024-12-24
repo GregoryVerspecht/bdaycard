@@ -3,6 +3,7 @@
     "short_name": "Bday Card",
     "start_url": "./index.html",
     "display": "standalone",
+    "orientation": "portrait",
     "background_color": "#ff9a9e",
     "theme_color": "#ff6b6b",
     "icons": [
