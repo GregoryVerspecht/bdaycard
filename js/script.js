@@ -126,7 +126,7 @@ function showAndroidInstallPrompt() {
     document.getElementById("app").innerHTML = `
       <div id="front">
         <div class="card">
-          <img src="assets/hind-photo.png" alt="Foto van Hind" id="hind-photo">
+          <img src="assets/hind-photo.jpg" alt="Foto van Hind" id="hind-photo">
           <button id="open-card-btn">Open de kaart</button>
         </div>
       </div>
