@@ -226,10 +226,13 @@ function playMusic() {
         console.error("Kan muziek niet afspelen:", error);
       });
   }
+    
+  // Start met de voorkant
+  document.addEventListener("DOMContentLoaded", () => {
+    loadFront();
+  });
   
-  // Functie om de eindboodschap en het liedje te tonen
   function showFinalMessage() {
-   // playMusic(); // Speel muziek af
     document.getElementById("app").innerHTML = `
       <div id="final">
         <h1>Gefeliciteerd, Hind! 🎉</h1>
@@ -240,10 +243,49 @@ function playMusic() {
         </audio>
       </div>
     `;
+  
+    // Voeg confetti toe
+    startConfetti();
   }
   
-  // Start met de voorkant
-  document.addEventListener("DOMContentLoaded", () => {
-    loadFront();
-  });
+  // Confetti-generatie
+  function startConfetti() {
+    const confettiContainer = document.createElement("div");
+    confettiContainer.style.position = "fixed";
+    confettiContainer.style.top = 0;
+    confettiContainer.style.left = 0;
+    confettiContainer.style.width = "100%";
+    confettiContainer.style.height = "100%";
+    confettiContainer.style.pointerEvents = "none";
+    confettiContainer.classList.add("confetti");
+  
+    document.body.appendChild(confettiContainer);
+  
+    const confettiCount = 100;
+    for (let i = 0; i < confettiCount; i++) {
+      const confetti = document.createElement("div");
+      confetti.style.position = "absolute";
+      confetti.style.width = "10px";
+      confetti.style.height = "10px";
+      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+      confetti.style.top = `${Math.random() * 100}%`;
+      confetti.style.left = `${Math.random() * 100}%`;
+      confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear infinite`;
+      confettiContainer.appendChild(confetti);
+    }
+  }
+  
+  // Voeg CSS voor confetti toe
+  const confettiStyles = document.createElement("style");
+  confettiStyles.innerHTML = `
+  @keyframes fall {
+    to {
+      transform: translateY(100vh) rotate(360deg);
+    }
+  }
+  .confetti div {
+    animation-delay: calc(var(--i) * 0.1s);
+  }
+  `;
+  document.head.appendChild(confettiStyles);
   
