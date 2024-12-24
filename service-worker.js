@@ -1,4 +1,4 @@
-const cacheName = "bday-card-v1";
+const cacheName = "bday-card-v2";
 const assets = [
   "/",
   "/index.html",
