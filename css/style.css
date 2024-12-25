@@ -2,9 +2,9 @@
 
 /* Body: Roze achtergrond en gecentreerde app-container */
 body {
-    margin: 0;
+    
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #ff9a9e, #ff6b6b); /* Roze verloop */
+    background: whitesmoke;/*linear-gradient(to bottom, #ff9a9e, #ff6b6b); /* Roze verloop */
     display: flex; /* Flexbox voor centreren */
     justify-content: center; /* Centreer horizontaal */
     align-items: center; /* Centreer verticaal */
@@ -15,55 +15,42 @@ body {
 #app {
     display: flex;
     flex-direction: column; /* Header, content, footer in kolom */
-    height: 90vh; /* Vul 90% van de schermhoogte */
+    height: 100vh; /* Vul 90% van de schermhoogte */
     max-height: 800px; /* Limiteer hoogte voor grote schermen */
-    width: 90vw; /* Vul 90% van de schermbreedte */
+    width: 100vw; /* Vul 90% van de schermbreedte */
     max-width: 500px; /* Limiteer breedte voor grotere schermen */
     margin: 0 auto;
-    background: whitesmoke;
+    background: linear-gradient(to bottom, #fff9f9, #ffaaaa);;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
+    /*padding: 0px;*/
     box-sizing: border-box; /* Zorg dat padding wordt meegerekend */
   }
   
   /* Header */
   #header {
-    background: #ff6b6b;
-    color: white;
+    background: #ffb0b0;
+    font-family: 'Great Vibes', cursive;
+    color: #fff9f9;
     text-align: center;
-    width: 90%; /* Iets kleiner dan de kaartbreedte */
-    height: 80px; /* Vaste hoogte voor consistentie */
+    width: 100%; /* Iets kleiner dan de kaartbreedte */
+    height: 15%; /* Vaste hoogte voor consistentie */
     margin: 0 auto;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
-  
-  /* Content */
-  #content {
-    background: #ff6b6b;
-    color: white;
-    text-align: center;
-    width: 90%; /* Iets kleiner dan de kaartbreedte */
-    flex: 1; /* Vul resterende ruimte na header en footer */
-    overflow-y: auto; /* Voeg scroll toe als de inhoud te groot is */
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centreer de inhoud verticaal */
-    align-items: center; /* Centreer de inhoud horizontaal */
-  }
-  
+    
   /* Footer */
   #footer {
-    background: #ff6b6b;
-    color: white;
+    background: #ffe3e3;
+    color: #ffaaaa;
     text-align: center;
-    width: 90%; /* Iets kleiner dan de kaartbreedte */
-    height: 100px; /* Vaste hoogte voor consistentie */
+    width: 100%; /* Iets kleiner dan de kaartbreedte */
+    height: 10%; /* Vaste hoogte voor consistentie */
     margin: 0 auto;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -79,7 +66,7 @@ body {
   
   #footer button {
     background: white;
-    color: #ff6b6b;
+    color: #ffaaaa;
     border: 1px solid #ff6b6b;
     border-radius: 5px;
     
@@ -96,14 +83,14 @@ body {
   /* Content */
 
   #content {
-    background: #ff6b6b;
-    color: white;
+    background: #ffe3e3;
+    color: #ffb0b0;
     text-align: center;
-    width: 90%; /* Iets kleiner dan de kaartbreedte */
-    max-height: 100%; /* Beperk hoogte binnen de container */
+    width: 100%; /* Iets kleiner dan de kaartbreedte */
+    max-height: 75%; /* Beperk hoogte binnen de container */
     flex: 1; /* Vul resterende ruimte */
     margin: 0 auto;
-    
+    object-fit: contain; /* Zorg dat de afbeelding niet uitrekt */
     display: flex; /* Gebruik flexbox voor layout */
     flex-direction: column; /* Zorg dat de inhoud verticaal gestapeld is */
     justify-content: center; /* Centreer de inhoud verticaal */
@@ -129,14 +116,14 @@ body {
   /* Afbeelding */
   #hind-photo {
     max-width: 80%; /* Beperk breedte voor grotere schermen */
-    max-height: 100%; /* Beperk hoogte binnen de container */
+    max-height: 95%; /* Beperk hoogte binnen de container */
     object-fit: contain; /* Zorg dat de afbeelding niet uitrekt */
     border-radius: 10px;
   }
 
   #blow-gif {
     max-width: 80%; /* Beperk breedte voor grotere schermen */
-    max-height: 20%; /* Beperk hoogte binnen de container */
+    max-height: 40%; /* Beperk hoogte binnen de container */
     object-fit: contain; /* Zorg dat de afbeelding niet uitrekt */
     border-radius: 10px;
   }
@@ -190,7 +177,7 @@ body {
     align-items: center;
     height: 100%; /* Vul de volledige hoogte van de container */
     width: 100%; /* Vul de volledige breedte van de container */
-    padding: 20px;
+    padding: 0px;
     box-sizing: border-box;
     text-align: center;
   }

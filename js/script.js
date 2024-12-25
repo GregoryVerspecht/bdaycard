@@ -108,17 +108,37 @@ function loadPage(headerText, contentHtml, footerText) {
 // Dynamische inhoud voor "pagina's"
 function loadFrontPage() {
     loadPage(
-      "Welkom op Hind's Verjaardagskaart! 🎉",
+      " 🎉 Welkom op Hind's verjaardagskaart! 🎉 ",
       `
         <img src="assets/hind-photo.jpg" alt="Foto van Hind" id="hind-photo">
         
       `,
       `
-        <button onclick="loadCandlePage()"> 👉🏼 Open jouw kaartje! 👈🏼</button>
+        <button onclick="loadIntroCandlePage()"> 👉🏼 Open jouw kaartje! 👈🏼</button>
       `
     );
   }
-  
+ 
+function loadIntroCandlePage() {
+    loadPage(
+      "🌬️ Hind maakt wind! 🌬️ ",
+      `
+      <h1>Adem heeeel diep in!</h1> 
+      <p>Je gaat zo meteen zo hard mogelijk naar je gsm moeten blazen!
+      Maar echt Hind, blazen eh!
+      </p>
+      <p></p>
+      <img src="assets/blow.webp" alt="Foto van Hind" id="blow-gif">
+      <p></p>
+      <p>ℹ️ Tip: blaas naar je microfoon! ℹ️</p> 
+        
+      `,
+      `<button onclick="loadCandlePage()"> 👉🏼 Ik ben klaar, laat mij blazen! 👈🏼</button>
+      ` 
+    );
+    loadCandles();
+    enableBlowing();
+  } 
 
 function loadCandlePage() {
   loadPage(
@@ -126,9 +146,6 @@ function loadCandlePage() {
     `
     
     <div id="candles"></div>
-    <p></p> 
-    <img src="assets/blow.webp" alt="Foto van Hind" id="blow-gif">
-    <p>🌬️ Tip: blaas naar je microfoon! 🌬️</p> 
       
     `,
     `
@@ -143,7 +160,7 @@ function loadFinalPage() {
     loadPage(
       "Gefeliciteerd, Hind! 🎉",
       `
-        <h2>🎉 Je hebt het gehaald! 🎉</h2>
+        <h2> 🎉 Van harte gefeliciteerd met je verjaardag Hind! 🎉 </h2>
         <audio controls autoplay>
           <source src="assets/happy-birthday.mp3" type="audio/mpeg">
           Jouw browser ondersteunt geen audio-element.
