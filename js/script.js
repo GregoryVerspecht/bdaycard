@@ -108,7 +108,13 @@ function loadPage(headerText, contentHtml, footerText) {
 // Dynamische inhoud voor "pagina's"
 function loadFrontPage() {
     loadPage(
-      " 🎉 Welkom op Hind's verjaardagskaart! 🎉 ",
+      ` 
+      <h>🎉🎉🎉</h> <br>
+      <h>Welkom op Hind's </h><br>
+      <h>verjaardagskaart!</h><br>
+      <h>🎉🎉🎉</h>
+      `
+      ,
       `
         <img src="assets/hind-photo.jpg" alt="Foto van Hind" id="hind-photo">
         
