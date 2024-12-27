@@ -1,190 +1,65 @@
-/* App-container */
+/* Demo Margin */
+.container{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  
+}
 
-/* Body: Roze achtergrond en gecentreerde app-container */
-body {
-    
-    font-family: Arial, sans-serif;
-    background: whitesmoke;/*linear-gradient(to bottom, #ff9a9e, #ff6b6b); /* Roze verloop */
-    display: flex; /* Flexbox voor centreren */
-    justify-content: center; /* Centreer horizontaal */
-    align-items: center; /* Centreer verticaal */
-    min-height: 100vh; /* Zorg dat het scherm volledig gevuld wordt */
-    color: #333;
-  }
-/* App-container */
-#app {
-    display: flex;
-    flex-direction: column; /* Header, content, footer in kolom */
-    height: 100vh; /* Vul 90% van de schermhoogte */
-    max-height: 800px; /* Limiteer hoogte voor grote schermen */
-    width: 100vw; /* Vul 90% van de schermbreedte */
-    max-width: 500px; /* Limiteer breedte voor grotere schermen */
-    margin: 0 auto;
-    background: linear-gradient(to bottom, #fff9f9, #ffaaaa);;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /*padding: 0px;*/
-    box-sizing: border-box; /* Zorg dat padding wordt meegerekend */
-  }
-  
-  /* Header */
-  #header {
-    background: #ffb0b0;
-    font-family: 'Great Vibes', cursive;
-    color: #fff9f9;
-    text-align: center;
-    width: 100%; /* Iets kleiner dan de kaartbreedte */
-    height: 15%; /* Vaste hoogte voor consistentie */
-    margin: 0 auto;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-    
-  /* Footer */
-  #footer {
-    background: #ffe3e3;
-    color: #ffaaaa;
-    text-align: center;
-    width: 100%; /* Iets kleiner dan de kaartbreedte */
-    height: 10%; /* Vaste hoogte voor consistentie */
-    margin: 0 auto;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #footer p {
-    margin: 5px 0; /* Ruimte boven en onder de tekst */
-  }
-  
-  #footer button {
-    background: white;
-    color: #ffaaaa;
-    border: 1px solid #ff6b6b;
-    border-radius: 5px;
-    
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  
-  #footer button:hover {
-    background: #ff6b6b;
-    color: white;
-  }
-  
-  /* Content */
+.btn-fixed-200 {
+  width: 200px; /* Of een andere waarde */
+}
 
-  #content {
-    background: #ffe3e3;
-    color: #ffb0b0;
-    text-align: center;
-    width: 100%; /* Iets kleiner dan de kaartbreedte */
-    max-height: 75%; /* Beperk hoogte binnen de container */
-    flex: 1; /* Vul resterende ruimte */
-    margin: 0 auto;
-    object-fit: contain; /* Zorg dat de afbeelding niet uitrekt */
-    display: flex; /* Gebruik flexbox voor layout */
-    flex-direction: column; /* Zorg dat de inhoud verticaal gestapeld is */
-    justify-content: center; /* Centreer de inhoud verticaal */
-    align-items: center; /* Centreer de inhoud horizontaal */
-  }
-  
-  /* Knoppen */
-  button {
-    background: #ff6b6b;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  button:hover {
-    background: #fc3c3c;
-  }
-  
-  /* Afbeelding */
-  #hind-photo {
-    max-width: 80%; /* Beperk breedte voor grotere schermen */
-    max-height: 95%; /* Beperk hoogte binnen de container */
-    object-fit: contain; /* Zorg dat de afbeelding niet uitrekt */
-    border-radius: 10px;
-  }
+.rectangle-responsive {
+  /* Bepaal de maximale breedte en hoogte in procenten 
+     (relatief aan de parent). Je kunt deze procenten naar smaak aanpassen. */
+     max-width: 80vw;
+     max-height: 80vh;
+     height: 80vh;
+     margin: 0 auto;
 
-  #blow-gif {
-    max-width: 80%; /* Beperk breedte voor grotere schermen */
-    max-height: 40%; /* Beperk hoogte binnen de container */
-    object-fit: contain; /* Zorg dat de afbeelding niet uitrekt */
-    border-radius: 10px;
-  }
+  /* Een vaste of flexibele hoogte?
+     - height: auto;  => laat de hoogte afhangen van de inhoud 
+     - Of laat het weg, zodat alleen max-height actief is.
+  */
+
+  /* Afgeronde hoeken */
+  border-radius: 10px;  
+
+  /* Rood randje */
+  border: 2px solid red; 
+
+  /* Eventueel een achtergrondkleur (optioneel) */
+  background-color: #ffffff; 
+
+  /* Wat padding zodat je tekst niet strak tegen de randen plakt */
+  padding: 1rem;
+
+  /* Als je veel tekst/inhoud hebt, zorgt overflow voor scrollbars ipv dat alles uitspringt */
+  overflow: hidden; 
+}
+
+.rectangle-with-bg {
+  /* Breedte/hoogte in % of px, net als eerder */
+  max-width: 80vw;
+  max-height: 100vh;
+  height: 90vh;
+  margin: 0 auto;
   
-  /* Titels en tekst */
-  h1 {
-    font-size: 1.5rem; /* Maak de titel proportioneel kleiner */
-    margin: 10px 0;
-  }
+  /* Ronde hoeken en rode rand */
+  border-radius: 10px;
+  border: 2px;
   
-  p {
-    font-size: 1rem;
-    margin: 10px 0;
-  }
-  
-  /* Kaarsen */
-  #candles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .candle {
-    width: 30px;
-    height: 100px;
-    background: linear-gradient(to bottom, #ff9a9e, #ff6f61); /* Roze en oranje */
-    border-radius: 5px;
-    margin: 10px;
-    position: relative;
-    box-shadow: 0 0 10px rgba(255, 105, 135, 0.5); /* Gloei-effect */
-  }
-  
-  .flame {
-    width: 10px;
-    height: 20px;
-    background: radial-gradient(circle, #ffdd55, #ff4444); /* Gele kern en rode rand */
-    border-radius: 50%;
-    position: absolute;
-    top: -20px;
-    left: 10px;
-    animation: flicker 0.5s infinite ease-in-out;
-    box-shadow: 0 0 15px rgba(255, 170, 51, 0.8); /* Gloeiende vlam */
-  }
-  
-  /* Kaart */
-  .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Verdeel de inhoud gelijkmatig */
-    align-items: center;
-    height: 100%; /* Vul de volledige hoogte van de container */
-    width: 100%; /* Vul de volledige breedte van de container */
-    padding: 0px;
-    box-sizing: border-box;
-    text-align: center;
-  }
-  
-  /* Fade-in animatie */
-  @keyframes fade-in {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  
+  /* Achtergrondafbeelding instellen */
+  background-image: url("../assets/kader.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; 
+  /* of 'contain' als je de volledige afbeelding
+     wilt laten zien, maar dan kunnen er randen overblijven */
+
+  /* Padding zodat tekst niet strak tegen de rand zit */
+  padding: 1rem;
+
+  /* Als de inhoud groter is dan max-height, komt er scroll */
+  overflow: hidden;
+}

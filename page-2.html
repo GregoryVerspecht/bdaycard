@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-  <title>Birthday Card Hind</title>
+  <title>Info blazen</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Eigen CSS -->
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <!-- PWA meta tags -->
   <link rel="icon" sizes="192x192" href="assets/christmas-gift.png">
   <link rel="manifest" href="manifest.json">
@@ -26,30 +26,50 @@
 
       <!-- Kaart in het midden -->
       <div class="col-md-6 col-12">
-        <div class="card text-bg-dark" onclick="window.location.href='page-2.html';">
-          <img src="assets/hind-frontpage.png" class="card-img" alt="Hindje">
+        <div class="card text-bg-dark" onclick="window.location.href='page-3.html';">
+          <img src="assets/kader.png" class="card-img" alt="Hindje">
       
           <!-- 
                d-flex flex-column: zet alles in een kolom
                justify-content-between: verdeelt items over de hoogte
           -->
           <div class="card-img-overlay d-flex flex-column justify-content-between">
+            <div></div>
+            <div></div>
             
             <!-- Bovenste deel (bijv. titel) -->
             <div>
+              <br>
               <!--  <h1 class="card-title">Test</h1> -->
+              <h1 class="card-title">Maak je klaar om te blazen!</h1>
             </div>
-            
-            <!-- Onderste deel (knop) -->
+
+                    <!-- GIF in het midden, 50% van de containerbreedte -->
+            <div>      
+                <img 
+                src="assets/blow.webp" 
+                alt="Blazen GIF"
+                class="img-fluid mx-auto d-block" 
+                style="width: 65%;" 
+              />
+            </div>
+         
             <div>
+              <p>ℹ️ Tip: blaas naar je microfoon! ℹ️</p> <br>
               <button 
                 type="button" 
-                class="btn btn-outline-light w-100" 
-                onclick="window.location.href='page-2.html';"
+                class="btn btn-outline-light w-50 mx-auto d-block" 
+                
+                onclick="window.location.href='page-3.html';"
               >
-                Hey Hind, open hier je kaartje!
+                Klaar om te blazen?
               </button>
             </div>
+            
+            <div></div>
+            <div></div>
+            
+
       
           </div>
         </div>
@@ -59,6 +79,7 @@
       <div class="col-md-3 d-none d-md-block"></div>
     </div>
   </div>
+
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

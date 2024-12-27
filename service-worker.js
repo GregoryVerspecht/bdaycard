@@ -4,8 +4,7 @@ const assets = [
   "/index.html",
   "/css/style.css",
   "/js/script.js",
-  "/assets/happy-birthday.mp3",
-  "/assets/hind-frontpage.png"
+  "/assets/happy-birthday.mp3"
 ];
 
 // Cache de bestanden
