@@ -93,3 +93,7 @@ function showAndroidInstallPrompt() {
     document.body.removeChild(prompt);
   });
 }
+
+// Selecteer de kaart en de open-knop
+const card = document.getElementById('card');
+const openButton = document.getElementById('open-card');

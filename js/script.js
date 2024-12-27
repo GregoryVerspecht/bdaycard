@@ -112,7 +112,7 @@ function loadFrontPage() {
       <h>🎉🎉🎉</h> <br>
       <h>Welkom op Hind's </h><br>
       <h>verjaardagskaart!</h><br>
-      <h>🎉🎉🎉</h>
+      <h>🎉🎉🎉 - Versie 1</h>
       `
       ,
       `
