@@ -27,6 +27,7 @@ function showIOSInstallPrompt() {
     right: 20px;
     padding: 15px;
     background: #fff;
+    color: #000000;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -97,3 +98,5 @@ function showAndroidInstallPrompt() {
 // Selecteer de kaart en de open-knop
 const card = document.getElementById('card');
 const openButton = document.getElementById('open-card');
+
+

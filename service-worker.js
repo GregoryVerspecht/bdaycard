@@ -4,6 +4,7 @@ const assets = [
   "/index.html",
   "/css/style.css",
   "/js/script.js",
+  "/js/candles.js",
   "/assets/happy-birthday.mp3"
 ];
 

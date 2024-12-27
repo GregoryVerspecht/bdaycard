@@ -3,6 +3,7 @@
   margin-top: 50px;
   margin-bottom: 50px;
   
+  
 }
 
 .full-height-dvh {
@@ -14,11 +15,12 @@
 }
 
 .rectangle-responsive {
+  
   /* Bepaal de maximale breedte en hoogte in procenten 
      (relatief aan de parent). Je kunt deze procenten naar smaak aanpassen. */
      max-width: 100vw;
      max-height: 100vh;
- 
+
      margin: 0 auto;
 
   /* Een vaste of flexibele hoogte?
@@ -30,7 +32,8 @@
   border-radius: 10px;  
 
   /* Rood randje */
-  border: 2px solid yellow; 
+  border: 2px solid #ffd1dc; 
+  background-color: rgba(255, 209, 220, 0.1);
 
   /* Eventueel een achtergrondkleur (optioneel) */
   /*background-color: #ffffff; */
@@ -67,3 +70,37 @@
   /* Als de inhoud groter is dan max-height, komt er scroll */
   overflow: hidden;
 }
+
+
+/* KAARSEN */ 
+
+
+  /* Kaarsen */
+  #candles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .candle {
+    width: 30px;
+    height: 100px;
+    background: linear-gradient(to bottom, #ff9a9e, #ff6f61); /* Roze en oranje */
+    border-radius: 5px;
+    margin: 10px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(255, 105, 135, 0.5); /* Gloei-effect */
+  }
+  
+  .flame {
+    width: 10px;
+    height: 20px;
+    background: radial-gradient(circle, #ffdd55, #ff4444); /* Gele kern en rode rand */
+    border-radius: 50%;
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    animation: flicker 0.5s infinite ease-in-out;
+    box-shadow: 0 0 15px rgba(255, 170, 51, 0.8); /* Gloeiende vlam */
+  }
