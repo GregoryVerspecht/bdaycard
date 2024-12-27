@@ -5,6 +5,10 @@
   
 }
 
+.full-height-dvh {
+  min-height: 100dvh;
+}
+
 .btn-fixed-200 {
   width: 200px; /* Of een andere waarde */
 }
@@ -12,9 +16,9 @@
 .rectangle-responsive {
   /* Bepaal de maximale breedte en hoogte in procenten 
      (relatief aan de parent). Je kunt deze procenten naar smaak aanpassen. */
-     max-width: 80vw;
-     max-height: 80vh;
-     height: 80vh;
+     max-width: 100vw;
+     max-height: 100vh;
+ 
      margin: 0 auto;
 
   /* Een vaste of flexibele hoogte?
@@ -26,7 +30,7 @@
   border-radius: 10px;  
 
   /* Rood randje */
-  border: 2px solid red; 
+  border: 2px solid yellow; 
 
   /* Eventueel een achtergrondkleur (optioneel) */
   /*background-color: #ffffff; */
@@ -40,9 +44,9 @@
 
 .rectangle-with-bg {
   /* Breedte/hoogte in % of px, net als eerder */
-  max-width: 80vw;
-  max-height: 100vh;
-  height: 90vh;
+  max-width: 90vw;
+  max-height: 90vh;
+  
   margin: 0 auto;
   
   /* Ronde hoeken en rode rand */
