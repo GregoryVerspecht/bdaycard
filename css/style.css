@@ -73,7 +73,7 @@ body {
   margin-top: 30px;
   padding: 15px; /* Ruimte aan de zijkanten */
   gap: 15px; /* Ruimte tussen de kaarsen */
-  overflow: hidden;
+  overflow: auto;
 }
 
 /* Kaarsen */
@@ -182,7 +182,6 @@ body {
     "SPAC" 0;
   color: #ffffff; /* Witte tekstkleur */
 }
-
 
 /* Stijl voor de kaarsen (emoji's) */
 .bday-text .emoji {
