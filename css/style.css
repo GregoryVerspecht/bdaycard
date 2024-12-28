@@ -65,36 +65,68 @@ body {
 
 /* KAARSEN */ 
 
+/* Kaarsen Container */
+#candles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 15px; /* Ruimte aan de zijkanten */
+  gap: 15px; /* Ruimte tussen de kaarsen */
+  overflow: hidden;
+}
 
-  /* Kaarsen */
-  #candles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
+/* Kaarsen */
+.candle {
+  width: 10vw; /* Flexibele breedte, gebaseerd op de viewportbreedte */
+  max-width: 40px; /* Maximale breedte van de kaars */
+  height: 15vw; /* Flexibele hoogte, verhouding met breedte */
+  max-height: 100px; /* Maximale hoogte van de kaars */
+  background: linear-gradient(to bottom, #ff9a9e, #ff6f61); /* Roze en oranje */
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 0 10px rgba(255, 105, 135, 0.5); /* Gloei-effect */
+}
+
+/* Vlam */
+.flame {
+  width: 3vw; /* Flexibele breedte */
+  max-width: 10px; /* Maximale breedte */
+  height: 6vw; /* Flexibele hoogte */
+  max-height: 20px; /* Maximale hoogte */
+  background: radial-gradient(circle, #ffdd55, #ff4444); /* Gele kern en rode rand */
+  border-radius: 50%;
+  position: absolute;
+  top: -10%; /* Responsieve positie */
+  left: 50%;
+  transform: translateX(-50%);
+  animation: flicker 0.5s infinite ease-in-out;
+  box-shadow: 0 0 15px rgba(255, 170, 51, 0.8); /* Gloeiende vlam */
+}
+
+/* Flicker Animatie */
+@keyframes flicker {
+  0%, 100% {
+    transform: translate(-50%, -10%) scale(1);
   }
-  
+  50% {
+    transform: translate(-50%, -12%) scale(1.2);
+  }
+}
+
+/* Media Queries voor extra aanpassing */
+@media (max-width: 768px) {
   .candle {
-    width: 30px;
-    height: 100px;
-    background: linear-gradient(to bottom, #ff9a9e, #ff6f61); /* Roze en oranje */
-    border-radius: 5px;
-    margin: 10px;
-    position: relative;
-    box-shadow: 0 0 10px rgba(255, 105, 135, 0.5); /* Gloei-effect */
+    width: 15vw; /* Grotere breedte op kleine schermen */
+    height: 25vw; /* Grotere hoogte op kleine schermen */
   }
-  
+
   .flame {
-    width: 10px;
-    height: 20px;
-    background: radial-gradient(circle, #ffdd55, #ff4444); /* Gele kern en rode rand */
-    border-radius: 50%;
-    position: absolute;
-    top: -20px;
-    left: 10px;
-    animation: flicker 0.5s infinite ease-in-out;
-    box-shadow: 0 0 15px rgba(255, 170, 51, 0.8); /* Gloeiende vlam */
+    width: 4vw;
+    height: 8vw;
   }
+}
+
   
   /* Verander de algemene tekstkleur van de modal */
 .modal-content {
