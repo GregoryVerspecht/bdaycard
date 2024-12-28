@@ -2,6 +2,9 @@ const cacheName = "bday-card-v3.4"; // Verander de versie wanneer je iets wijzig
 const assets = [
   "/",
   "/index.html",
+  "/page-2.html",
+  "/page-3.html",
+  "/page-4.html",
   "/css/style.css",
   "/js/script.js",
   "/js/candles.js",
