@@ -61,6 +61,7 @@ function showAndroidInstallPrompt() {
     right: 20px;
     padding: 15px;
     background: #fff;
+    color: #000000;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
