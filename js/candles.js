@@ -3,6 +3,7 @@
 function loadCandlePage() {
     console.log("loadCandlePage wordt uitgevoerd.");
     loadCandles();
+    enableBlowing();
   }
   
   function loadCandles() {
