@@ -15,35 +15,20 @@
 }
 
 .rectangle-responsive {
-  
-  /* Bepaal de maximale breedte en hoogte in procenten 
-     (relatief aan de parent). Je kunt deze procenten naar smaak aanpassen. */
-     max-width: 100vw;
-     max-height: 100vh;
-
-     margin: 0 auto;
-
-  /* Een vaste of flexibele hoogte?
-     - height: auto;  => laat de hoogte afhangen van de inhoud 
-     - Of laat het weg, zodat alleen max-height actief is.
-  */
-
-  /* Afgeronde hoeken */
-  border-radius: 10px;  
-
-  /* Rood randje */
-  border: 2px solid #ffd1dc; 
-  background-color: rgba(255, 209, 220, 0.1);
-
-  /* Eventueel een achtergrondkleur (optioneel) */
-  /*background-color: #ffffff; */
-
-  /* Wat padding zodat je tekst niet strak tegen de randen plakt */
-  padding: 1rem;
-
-  /* Als je veel tekst/inhoud hebt, zorgt overflow voor scrollbars ipv dat alles uitspringt */
-  overflow: hidden; 
+  width: 100vw;
+  max-width: 100vh; /* Voeg een maximale breedte toe voor grote schermen */
+  margin: auto; /* Centreert de div */
+  border: 2px solid #ffd1dc; /* Rode rand om de div te visualiseren */
+  border-radius: 10px; /* Afgeronde hoeken */
+  background-color: rgba(255, 209, 220, 0.1); /* Transparante roze achtergrond */
+  box-sizing: border-box; /* Zorgt ervoor dat padding en border worden meegerekend bij de breedte en hoogte */
+  padding: 1rem; /* Binnenmarge voor de inhoud */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 
 .rectangle-with-bg {
   /* Breedte/hoogte in % of px, net als eerder */
@@ -104,3 +89,4 @@
     animation: flicker 0.5s infinite ease-in-out;
     box-shadow: 0 0 15px rgba(255, 170, 51, 0.8); /* Gloeiende vlam */
   }
+  
