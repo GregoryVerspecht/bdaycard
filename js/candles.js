@@ -70,6 +70,10 @@ function loadCandlePage() {
   function loadFinalPage() {
     console.log("loadFinalPage wordt uitgevoerd.");
     window.location.href = 'page-4.html';
+      // Laad confetti binnen de container
+    tsParticles.load("confetti-container", {
+    // Configuratie zoals eerder aangegeven
+  });
   }
   
   // Voeg de DOMContentLoaded listener toe
