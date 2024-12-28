@@ -168,9 +168,7 @@ body {
   color: #ffffff; /* Witte tekstkleur */
   text-shadow: 
     1px 1px 5px rgba(0, 0, 0, 0.5), /* Zachte donkere schaduw voor leesbaarheid */
-    0px 0px 10px rgba(255, 255, 255, 0.6); /* Subtiele witte gloed */
-  margin: 20px 0;
-  
+    0px 0px 10px rgba(255, 255, 255, 0.6); /* Subtiele witte gloed */ 
 
 }
 
