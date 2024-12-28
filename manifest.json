@@ -4,11 +4,11 @@
     "start_url": "./index.html",
     "display": "standalone",
     "orientation": "portrait",
-    "background_color": "#ff9a9e",
+    "background_color": "#19191e",
     "theme_color": "#ff6b6b",
     "icons": [
       {
-        "src": "assets/gift-box.png",
+        "src": "assets/icon.png",
         "sizes": "128x128",
         "type": "image/png"
       }

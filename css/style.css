@@ -6,6 +6,12 @@
   
 }
 
+body {
+  background-color: #19191e; /* Vervang met jouw gewenste kleur */
+  color: #212529; /* Zorg dat de tekstkleur goed leesbaar blijft */
+}
+
+
 .card-img-overlay{
   border-radius: 10px; /* Afgeronde hoeken */
 }
