@@ -10,10 +10,6 @@
   min-height: 100dvh;
 }
 
-.btn-fixed-200 {
-  width: 200px; /* Of een andere waarde */
-}
-
 .rectangle-responsive {
   width: 100vw;
   max-width: 100vh; /* Voeg een maximale breedte toe voor grote schermen */
