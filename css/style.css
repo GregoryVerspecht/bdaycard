@@ -151,3 +151,69 @@ body {
       z-index: 2; /* Zorg ervoor dat de inhoud boven de confetti staat */
       text-align: center;
     }
+
+
+/* -------------------------------- */ 
+
+    /* Algemeen voor alle h1's in de verjaardagstekst */
+.bday-text {
+  font-family: "Shantell Sans", serif; /* Speels handgeschreven lettertype */
+  text-align: center;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "BNCE" 0,
+    "INFM" 0,
+    "SPAC" 0;
+  color: #ffffff; /* Witte tekstkleur */
+  text-shadow: 
+    1px 1px 5px rgba(0, 0, 0, 0.5), /* Zachte donkere schaduw voor leesbaarheid */
+    0px 0px 10px rgba(255, 255, 255, 0.6); /* Subtiele witte gloed */
+  margin: 20px 0;
+  
+  padding: 20px;
+  border-radius: 10px; /* Zachte hoeken */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtiele schaduw rond de container */
+}
+
+.fancy-text{
+  font-family: "Shantell Sans", serif; /* Speels handgeschreven lettertype */
+  text-align: center;
+  font-style: normal;
+  font-variation-settings:
+    "BNCE" 0,
+    "INFM" 0,
+    "SPAC" 0;
+  color: #ffffff; /* Witte tekstkleur */
+}
+
+
+/* Stijl voor de kaarsen (emoji's) */
+.bday-text .emoji {
+  font-size: 2rem; /* Grotere kaars-emoji */
+  margin: 0 5px;
+  text-shadow: 
+    1px 1px 5px rgba(0, 0, 0, 0.5), /* Zachte donkere schaduw voor leesbaarheid */
+    0px 0px 10px rgba(255, 255, 255, 0.6); /* Subtiele witte gloed */
+}
+
+/* Hoogtepunttekst */
+.bday-text .highlight {
+  font-size: 2.5rem;
+  color: #ffffff; /* Witte tekstkleur */
+  font-weight: bold;
+  text-shadow: 
+    2px 2px 8px rgba(0, 0, 0, 0.5), /* Donkere schaduw */
+    0px 0px 15px rgba(255, 255, 255, 0.7); /* Sterkere witte gloed */
+}
+
+/* Responsiviteit voor kleinere schermen */
+@media (max-width: 768px) {
+  .bday-text .emoji {
+    font-size: 1.8rem; /* Emoji's iets kleiner maken */
+  }
+  .bday-text .highlight {
+    font-size: 2rem; /* Hoogtepunttekst iets verkleinen */
+  }
+}
+

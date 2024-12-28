@@ -3,7 +3,7 @@
 (async () => {
     const canvas = document.getElementById("my-canvas");
   
-    const duration = 15 * 1000,
+    const duration = 25 * 1000,
     animationEnd = Date.now() + duration,
     defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
   
