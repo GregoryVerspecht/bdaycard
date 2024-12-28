@@ -90,3 +90,7 @@
     box-shadow: 0 0 15px rgba(255, 170, 51, 0.8); /* Gloeiende vlam */
   }
   
+  /* Verander de algemene tekstkleur van de modal */
+.modal-content {
+  color: #000000; /* Vervang #ff6b6b door de gewenste kleurcode */
+}

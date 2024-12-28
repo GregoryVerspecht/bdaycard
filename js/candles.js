@@ -3,10 +3,8 @@
 function loadCandlePage() {
     console.log("loadCandlePage wordt uitgevoerd.");
     loadCandles();
-    enableBlowing();
   }
   
-  // Functie om kaarsjes dynamisch te genereren
   function loadCandles() {
     console.log("loadCandles wordt uitgevoerd.");
     const candlesContainer = document.getElementById("candles");
@@ -18,6 +16,7 @@ function loadCandlePage() {
     for (let i = 0; i < 24; i++) {
       const candle = document.createElement("div");
       candle.classList.add("candle");
+      candle.setAttribute('aria-label', `Kaars ${i+1}`); // Toegankelijkheid
       const flame = document.createElement("div");
       flame.classList.add("flame");
       candle.appendChild(flame);
@@ -76,5 +75,13 @@ function loadCandlePage() {
   document.addEventListener("DOMContentLoaded", function() {
     console.log("DOMContentLoaded event gedetecteerd in candles.js.");
     loadCandlePage();
+
+      // Voeg klik- en touch event listeners toe aan elke kaars
+  const candles = document.querySelectorAll('.candle');
+  candles.forEach(candle => {
+    candle.addEventListener('click', extinguishCandle);
+    candle.addEventListener('touchstart', extinguishCandle);
+  });
+
   });
   
