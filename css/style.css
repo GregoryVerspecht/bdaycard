@@ -192,9 +192,19 @@ body {
 }
 
 /* Hoogtepunttekst */
+.bday-text .highlight-pink {
+  font-size: 2.5rem;
+  color: #ffd1dc; /* Witte tekstkleur */
+  font-weight: bold;
+  text-shadow: 
+    2px 2px 8px rgba(0, 0, 0, 0.5), /* Donkere schaduw */
+    0px 0px 15px rgba(255, 255, 255, 0.7); /* Sterkere witte gloed */
+}
+
+/* Hoogtepunttekst */
 .bday-text .highlight-2 {
-  font-size: 1.75rem;
-  color: #ffffff; /* Witte tekstkleur */
+  font-size: 1.5rem;
+  color: #FFF5EE; /* Witte tekstkleur */
   font-weight: bold;
   text-shadow: 
     2px 2px 8px rgba(0, 0, 0, 0.5), /* Donkere schaduw */
