@@ -26,7 +26,7 @@ body {
   margin: auto; /* Centreert de div */
   border: 2px solid #ffd1dc; /* Rode rand om de div te visualiseren */
   border-radius: 10px; /* Afgeronde hoeken */
-  background-color: rgba(25, 25, 25, 0.4); /* Transparante roze achtergrond */
+  background-color: rgba(25, 25, 25, 0.5); /* Transparante roze achtergrond */
   box-sizing: border-box; /* Zorgt ervoor dat padding en border worden meegerekend bij de breedte en hoogte */
   padding: 1rem; /* Binnenmarge voor de inhoud */
   display: flex;
@@ -147,7 +147,7 @@ body {
 .bday-text {
   font-family: "Shantell Sans", serif; /* Speels handgeschreven lettertype */
   text-align: center;
-  font-size: 1.5rem; /* Grotere kaars-emoji */
+  font-size: 4.0rem; /* Grotere kaars-emoji */
   font-weight: 400;
   font-style: normal;
   font-variation-settings:
@@ -174,7 +174,7 @@ body {
 
 /* Stijl voor de kaarsen (emoji's) */
 .bday-text .emoji {
-  font-size: 1.5rem; /* Grotere kaars-emoji */
+  font-size: 2.5rem; /* Grotere kaars-emoji */
   margin: 0 5px;
   text-shadow: 
     1px 1px 5px rgba(0, 0, 0, 0.5), /* Zachte donkere schaduw voor leesbaarheid */
@@ -183,7 +183,17 @@ body {
 
 /* Hoogtepunttekst */
 .bday-text .highlight {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  color: #ffffff; /* Witte tekstkleur */
+  font-weight: bold;
+  text-shadow: 
+    2px 2px 8px rgba(0, 0, 0, 0.5), /* Donkere schaduw */
+    0px 0px 15px rgba(255, 255, 255, 0.7); /* Sterkere witte gloed */
+}
+
+/* Hoogtepunttekst */
+.bday-text .highlight-2 {
+  font-size: 1.75rem;
   color: #ffffff; /* Witte tekstkleur */
   font-weight: bold;
   text-shadow: 
@@ -194,13 +204,32 @@ body {
 /* Responsiviteit voor kleinere schermen */
 @media (max-width: 768px) {
   .bday-text {
-    font-size: 1.2rem; /* Emoji's iets kleiner maken */
+    font-size: 1.5rem; /* Emoji's iets kleiner maken */
+  }
+  .bday-text .emoji {
+    font-size: 1.5rem; /* Emoji's iets kleiner maken */
+  }
+  .bday-text .highlight {
+    font-size: 1.5rem; /* Hoogtepunttekst iets verkleinen */
+  }
+  .bday-text .highlight-2 {
+    font-size: 1.0rem; /* Hoogtepunttekst iets verkleinen */
+  }
+}
+
+/* Responsiviteit voor kleinere schermen */
+@media (max-width: 400px) {
+  .bday-text {
+    font-size: 1.5rem; /* Emoji's iets kleiner maken */
   }
   .bday-text .emoji {
     font-size: 1.2rem; /* Emoji's iets kleiner maken */
   }
   .bday-text .highlight {
     font-size: 1.2rem; /* Hoogtepunttekst iets verkleinen */
+  }
+  .bday-text .highlight-2 {
+    font-size: 0.8rem; /* Hoogtepunttekst iets verkleinen */
   }
 }
 
@@ -214,15 +243,15 @@ body {
 /* Kleiner scherm: minder breedte */
 @media (max-width: 768px) {
   .responsive-gif {
-    width: 70%; /* GIF wordt breder op kleinere schermen */
-    max-width: 300px; /* Maximale breedte verder beperken */
+    width: 80%; /* GIF wordt breder op kleinere schermen */
+    max-width: 350px; /* Maximale breedte verder beperken */
   }
 }
 
 /* Extra klein scherm: nog kleiner */
 @media (max-width: 576px) {
   .responsive-gif {
-    width: 50%; /* GIF vult bijna de volledige breedte */
-    max-width: 100px; /* Maximale breedte beperken */
+    width: 80%; /* GIF vult bijna de volledige breedte */
+    max-width: 300px; /* Maximale breedte beperken */
   }
 }
