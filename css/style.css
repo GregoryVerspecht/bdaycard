@@ -230,3 +230,25 @@ body {
   }
 }
 
+/* Standaardgrootte */
+.responsive-gif {
+  width: 80%; /* GIF neemt 50% van de containerbreedte */
+  max-width: 600px; /* Maximale breedte van 400px */
+  height: auto; /* Houd de verhoudingen intact */
+}
+
+/* Kleiner scherm: minder breedte */
+@media (max-width: 768px) {
+  .responsive-gif {
+    width: 70%; /* GIF wordt breder op kleinere schermen */
+    max-width: 300px; /* Maximale breedte verder beperken */
+  }
+}
+
+/* Extra klein scherm: nog kleiner */
+@media (max-width: 576px) {
+  .responsive-gif {
+    width: 90%; /* GIF vult bijna de volledige breedte */
+    max-width: 250px; /* Maximale breedte beperken */
+  }
+}
