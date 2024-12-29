@@ -116,4 +116,8 @@ const openButton = document.getElementById('open-card');
     }
   });
 
+  document.addEventListener('touchstart', (event) => {
+    console.log('Touch event gedetecteerd!');
+    sessionStorage.setItem('userInteracted', 'true');
+  });
   
