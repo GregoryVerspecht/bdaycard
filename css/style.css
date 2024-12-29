@@ -211,6 +211,11 @@ body {
     0px 0px 15px rgba(255, 255, 255, 0.7); /* Sterkere witte gloed */
 }
 
+p {
+  font-size: 1.25rem; 
+  font-family: "Shantell Sans", serif;
+}
+
 /* Responsiviteit voor kleinere schermen */
 @media (max-width: 768px) {
   .bday-text {
@@ -227,6 +232,10 @@ body {
   }
   .bday-text .highlight-2 {
     font-size: 1.0rem; /* Hoogtepunttekst iets verkleinen */
+  }
+
+  p {
+    font-size: 0.9rem; 
   }
 }
 
@@ -246,6 +255,9 @@ body {
   }
   .bday-text .highlight-2 {
     font-size: 0.8rem; /* Hoogtepunttekst iets verkleinen */
+  }
+  p {
+    font-size: 0.75rem; 
   }
 }
 
