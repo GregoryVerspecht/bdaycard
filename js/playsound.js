@@ -19,6 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
       playSound();
    
   });
+
+  // Voeg zowel touchstart als click toe
+  document.addEventListener('touchstart', (event) => {
+    console.log('Touch event gedetecteerd!');
+    event.preventDefault(); // Voorkom de "click"-fallback
+    playSound();
+  });
   
 
   function playSound() {
