@@ -45,32 +45,6 @@ body {
   }
 }
 
-.rectangle-with-bg {
-  /* Breedte/hoogte in % of px, net als eerder */
-  max-width: 90vw;
-  max-height: 90vh;
-  
-  margin: 0 auto;
-  
-  /* Ronde hoeken en rode rand */
-  border-radius: 10px;
-  border: 2px;
-  
-  /* Achtergrondafbeelding instellen */
-  background-image: url("../assets/empty-page.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; 
-  /* of 'contain' als je de volledige afbeelding
-     wilt laten zien, maar dan kunnen er randen overblijven */
-
-  /* Padding zodat tekst niet strak tegen de rand zit */
-  padding: 1rem;
-
-  /* Als de inhoud groter is dan max-height, komt er scroll */
-  overflow: hidden;
-}
-
 
 /* KAARSEN */ 
 
@@ -127,16 +101,16 @@ body {
 @media (max-width: 576px) {
   .candle {
     width: 5vw; /* Nog kleinere breedte */
-    height: 8vw; /* Kleiner in verhouding */
-    max-width: 15px; /* Maximale breedte verder beperken */
-    max-height: 45px; /* Maximale hoogte verder beperken */
+    height: 10vw; /* Kleiner in verhouding */
+    max-width: 50px; /* Maximale breedte verder beperken */
+    max-height: 50px; /* Maximale hoogte verder beperken */
   }
 
   .flame {
-    width: 1vw; /* Vlam ook verkleinen */
-    height: 3vw;
-    max-width: 6px;
-    max-height: 10px;
+    width: 2vw; /* Vlam ook verkleinen */
+    height: 4vw;
+    max-width: 10px;
+    max-height: 16px;
   }
 }
 
