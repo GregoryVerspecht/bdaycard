@@ -248,7 +248,7 @@ body {
 /* Extra klein scherm: nog kleiner */
 @media (max-width: 576px) {
   .responsive-gif {
-    width: 90%; /* GIF vult bijna de volledige breedte */
-    max-width: 250px; /* Maximale breedte beperken */
+    width: 50%; /* GIF vult bijna de volledige breedte */
+    max-width: 10px; /* Maximale breedte beperken */
   }
 }
