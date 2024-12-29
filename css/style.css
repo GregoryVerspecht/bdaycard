@@ -222,6 +222,9 @@ body {
   .bday-text .highlight {
     font-size: 1.5rem; /* Hoogtepunttekst iets verkleinen */
   }
+  .bday-text .highlight-pink {
+    font-size: 1.5rem; /* Hoogtepunttekst iets verkleinen */
+  }
   .bday-text .highlight-2 {
     font-size: 1.0rem; /* Hoogtepunttekst iets verkleinen */
   }
@@ -236,6 +239,9 @@ body {
     font-size: 1.2rem; /* Emoji's iets kleiner maken */
   }
   .bday-text .highlight {
+    font-size: 1.2rem; /* Hoogtepunttekst iets verkleinen */
+  }
+  .bday-text .highlight-pink {
     font-size: 1.2rem; /* Hoogtepunttekst iets verkleinen */
   }
   .bday-text .highlight-2 {
