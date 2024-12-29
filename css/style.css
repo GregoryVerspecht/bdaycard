@@ -249,6 +249,6 @@ body {
 @media (max-width: 576px) {
   .responsive-gif {
     width: 50%; /* GIF vult bijna de volledige breedte */
-    max-width: 10px; /* Maximale breedte beperken */
+    max-width: 100px; /* Maximale breedte beperken */
   }
 }
