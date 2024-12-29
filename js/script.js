@@ -100,4 +100,20 @@ function showAndroidInstallPrompt() {
 const card = document.getElementById('card');
 const openButton = document.getElementById('open-card');
 
+  // Voeg event listeners toe aan klikbare elementen
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('button');
+    const card = document.querySelector('.card');
+  
+    // Voeg enableSound toe aan de klikacties
+    if (button) {
+        // Sla de interactie op in sessionStorage
+        sessionStorage.setItem('userInteracted', 'true');
+    }
+    if (card) {
+        // Sla de interactie op in sessionStorage
+        sessionStorage.setItem('userInteracted', 'true');
+    }
+  });
 
+  

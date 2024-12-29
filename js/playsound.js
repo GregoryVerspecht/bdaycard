@@ -1,41 +1,24 @@
-// Functie om een flag op te slaan en eventueel geluid af te spelen
-function enableSound() {
-    // Sla de flag op in sessionStorage
-    sessionStorage.setItem('soundEnabled', 'true');
+document.addEventListener('DOMContentLoaded', () => {
+    // Controleer of er interactie heeft plaatsgevonden
+    const userInteracted = sessionStorage.getItem('userInteracted') === 'true';
   
-    // Optioneel: speel geluid af als feedback op de eerste actie
-    const audio = new Audio('assets/click-sound.mp3'); // Feedbackgeluid
-    audio.play().catch((error) => {
-      console.error('Geluid kan niet worden afgespeeld:', error);
-    });
-  }
+    if (userInteracted) {
+      // Selecteer het audio-element
+      const audio = document.getElementById('birthdayAudio');
   
-  // Voeg event listeners toe aan klikbare elementen
-  document.addEventListener('DOMContentLoaded', () => {
-    const button = document.querySelector('button');
-    const card = document.querySelector('.card');
-  
-    // Voeg enableSound toe aan de klikacties
-    if (button) {
-      button.addEventListener('click', enableSound);
-    }
-    if (card) {
-      card.addEventListener('click', enableSound);
+      // Probeer het geluid af te spelen
+      audio.play().then(() => {
+        console.log('Audio speelt af omdat er interactie was.');
+      }).catch((error) => {
+        console.error('Audio kon niet automatisch worden afgespeeld:', error);
+      });
+    } else {
+      console.log('Geen interactie gedetecteerd. Geluid wordt niet afgespeeld.');
+      const warning = document.createElement('p');
+      warning.textContent = 'Klik eerst op een element op de eerste pagina om geluid te activeren.';
+      warning.style.color = 'red';
+      document.body.appendChild(warning);
     }
   });
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const audio = document.getElementById('birthdayAudio');
-    const isSoundEnabled = sessionStorage.getItem('soundEnabled') === 'true';
-  
-    if (isSoundEnabled) {
-      audio.play().then(() => {
-        console.log('Audio speelt automatisch af op Page-4.');
-      }).catch((error) => {
-        console.error('Audio kon niet automatisch afspelen:', error);
-      });
-    } else {
-      console.log('Geluid is niet geactiveerd. Interactie is vereist.');
-    }
-  });
   
